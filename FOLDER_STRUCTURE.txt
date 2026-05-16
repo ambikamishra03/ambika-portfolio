@@ -1,0 +1,183 @@
+📁 AMBIKA PORTFOLIO - COMPLETE FOLDER STRUCTURE
+================================================
+
+ambika-portfolio/
+│
+├── 📁 backend/
+│   ├── 📁 models/
+│   │   └── Contact.js                 ← MongoDB schema for contact messages
+│   │
+│   ├── 📁 routes/
+│   │   └── contact.js                 ← API endpoint: POST /api/contact
+│   │
+│   ├── server.js                      ← Express server setup & MongoDB connection
+│   ├── package.json                   ← Backend dependencies
+│   ├── .env.example                   ← Environment variables template
+│   └── 📝 README (inside main folder)
+│
+├── 📁 frontend/
+│   ├── 📁 src/
+│   │   ├── 📁 components/
+│   │   │   ├── Navbar.jsx             ← Navigation header with mobile menu
+│   │   │   ├── Navbar.css             ← Navigation styling
+│   │   │   ├── Footer.jsx             ← Footer with social links
+│   │   │   └── Footer.css             ← Footer styling
+│   │   │
+│   │   ├── 📁 pages/
+│   │   │   ├── Home.jsx               ← Hero + About sections (Main landing)
+│   │   │   ├── Home.css               ← Home page styling
+│   │   │   ├── Projects.jsx           ← Portfolio of 4 projects
+│   │   │   ├── Projects.css           ← Projects styling
+│   │   │   ├── Skills.jsx             ← Skills + Coursework sections
+│   │   │   ├── Skills.css             ← Skills styling
+│   │   │   ├── Contact.jsx            ← Contact form + info cards
+│   │   │   └── Contact.css            ← Contact styling
+│   │   │
+│   │   ├── App.jsx                    ← Main app with routes
+│   │   ├── App.css                    ← App-level styling
+│   │   ├── index.css                  ← Global styles + CSS variables
+│   │   └── main.jsx                   ← React entry point
+│   │
+│   ├── index.html                     ← HTML template
+│   ├── package.json                   ← Frontend dependencies
+│   ├── vite.config.js                 ← Vite build configuration
+│   └── 📝 README (inside main folder)
+│
+├── README.md                          ← Full documentation
+├── INSTALLATION.md                    ← Step-by-step setup guide
+└── .gitignore                         ← Git ignore rules
+
+
+KEY FILES TO CUSTOMIZE
+======================
+
+Personal Info:
+  • Contact Info → frontend/src/pages/Contact.jsx (line 26)
+  • Social Links → frontend/src/components/Footer.jsx (line 10)
+  • Email/Phone → frontend/src/pages/Contact.jsx (line 26)
+
+Content:
+  • Home About → frontend/src/pages/Home.jsx (line 100+)
+  • Projects → frontend/src/pages/Projects.jsx (line 5)
+  • Skills → frontend/src/pages/Skills.jsx (line 6)
+  • Coursework → frontend/src/pages/Skills.jsx (line 42)
+
+Design:
+  • Colors → frontend/src/index.css (line 2)
+  • Fonts → frontend/src/index.css (line 18)
+  • Animations → frontend/src/pages/*.jsx
+
+Backend:
+  • API Config → backend/server.js
+  • Database → backend/.env
+  • Contact Form → backend/routes/contact.js
+
+
+COMPONENT RELATIONSHIPS
+=======================
+
+App.jsx (main)
+├── Navbar (always visible)
+├── Routes
+│   ├── Home (includes About, CTA)
+│   ├── Projects (project showcase)
+│   ├── Skills (skills + coursework)
+│   └── Contact (contact form + info)
+└── Footer (always visible)
+
+
+FILE SIZES (Approximate)
+=======================
+
+Backend:
+  server.js ......................... 0.5 KB
+  models/Contact.js ................ 0.4 KB
+  routes/contact.js ................ 0.7 KB
+  package.json ..................... 0.3 KB
+  Total Backend .................... ~2 KB
+
+Frontend:
+  components/ ...................... ~3 KB
+  pages/ ........................... ~25 KB
+  CSS files ........................ ~15 KB
+  config files ..................... ~1 KB
+  Total Frontend ................... ~44 KB
+
+Total Project ..................... ~46 KB (without node_modules)
+With node_modules ................. ~500 MB (after npm install)
+
+
+HOW TO NAVIGATE
+===============
+
+📍 Want to change email?
+   → Open: frontend/src/pages/Contact.jsx
+   → Look for: ambikamishra9236@gmail.com
+
+📍 Want to add a project?
+   → Open: frontend/src/pages/Projects.jsx
+   → Find: const projects = [
+   → Add: new project object
+
+📍 Want to change colors?
+   → Open: frontend/src/index.css
+   → Find: :root {
+   → Change: --accent-blue, --primary-dark, etc.
+
+📍 Want to update skills?
+   → Open: frontend/src/pages/Skills.jsx
+   → Find: const skillCategories = [
+   → Edit: skill arrays
+
+📍 Want to fix contact form?
+   → Frontend: frontend/src/pages/Contact.jsx
+   → Backend: backend/routes/contact.js
+
+
+IMPORT RELATIONSHIPS
+====================
+
+App.jsx imports:
+  ├── Navbar.jsx
+  ├── Footer.jsx
+  ├── Home.jsx
+  ├── Projects.jsx
+  ├── Skills.jsx
+  └── Contact.jsx
+
+Components use:
+  ├── framer-motion (animations)
+  ├── react-router-dom (navigation)
+  └── axios (API calls)
+
+Backend uses:
+  ├── express (server)
+  ├── mongoose (MongoDB)
+  ├── cors (cross-origin)
+  └── dotenv (environment)
+
+
+START HERE
+==========
+
+1. Extract ZIP
+2. Read QUICK_START.md (5 min)
+3. Follow setup steps
+4. Open http://localhost:3000
+5. Use CUSTOMIZATION_GUIDE.md
+6. Make changes to YOUR files
+7. Deploy!
+
+
+REMEMBER
+========
+
+✓ Frontend changes reload automatically
+✓ Backend changes need npm run dev restart
+✓ Colors are in index.css
+✓ Text is everywhere
+✓ All files are organized logically
+✓ CSS is modular (one file per component)
+✓ Backend is separate and scalable
+
+Happy coding! 🚀
