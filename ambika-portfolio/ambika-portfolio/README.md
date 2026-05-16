@@ -267,7 +267,7 @@ npm run dev      # Start with nodemon
 
 Update these in your portfolio:
 - Email: ambikamishra9236@gmail.com
-- Phone: +91-9219077025
+- Phone: +91-XXXXXXXXXX
 - GitHub: https://github.com/ambikamishra03
 - LinkedIn: https://www.linkedin.com/in/ambikamishraa/
 - LeetCode: https://leetcode.com/u/ambikamishra/

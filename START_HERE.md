@@ -82,7 +82,7 @@ npm run dev
 ### ✅ Pre-filled with Your Data
 - Your name: Ambika Mishra
 - Your email: ambikamishra9236@gmail.com
-- Your phone: +91-9219077025
+- Your phone: +91-XXXXXXXXXX
 - Your projects from resume
 - Your skills and education
 - Your social media links

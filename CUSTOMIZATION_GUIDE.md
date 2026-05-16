@@ -20,8 +20,8 @@ const contactInfo = [
   {
     icon: '📱',
     title: 'Phone',
-    value: '+91-9219077025',
-    link: 'tel:+919219077025'
+    value: '+91-XXXXXXXXXX',
+    link: 'tel:+91XXXXXXXXXX'
   },
   // ... more items
 ]
@@ -452,7 +452,7 @@ EMAIL_PASSWORD=your-app-specific-password
 | Find | Replace With |
 |------|--------------|
 | ambikamishra9236@gmail.com | your-email@gmail.com |
-| +91-9219077025 | your-phone |
+| +91-XXXXXXXXXX | your-phone |
 | Ambika Mishra | Your Name |
 | Gorakhpur, Uttar Pradesh | Your Location |
 | github.com/ambikamishra03 | github.com/YOUR-USERNAME |

@@ -118,7 +118,7 @@ The portfolio comes **pre-populated** with:
 
 ✓ Your name: Ambika Mishra
 ✓ Your email: ambikamishra9236@gmail.com
-✓ Your phone: +91-9219077025
+✓ Your phone: +91-XXXXXXXXXX
 ✓ Your GitHub: github.com/ambikamishra03
 ✓ Your LinkedIn: linkedin.com/in/ambikamishraa/
 ✓ Your LeetCode: leetcode.com/u/ambikamishra/
