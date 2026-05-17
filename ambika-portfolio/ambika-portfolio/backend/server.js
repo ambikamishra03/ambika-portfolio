@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ambika-po
   app.get('/', (req, res) => {
   res.send('Backend API is running successfully');
 });
+
 // Routes
 import contactRoutes from './routes/contact.js';
 app.use('/api/contact', contactRoutes);
