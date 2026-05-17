@@ -4,6 +4,8 @@ import axios from 'axios'
 import './Contact.css'
 
 export default function Contact() {
+  const API_URL = import.meta.env.VITE_API_URL
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -46,6 +48,7 @@ export default function Contact() {
 
   const handleChange = (e) => {
     const { name, value } = e.target
+
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -54,26 +57,39 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setStatus({ submitted: false, loading: true, error: null })
+
+    setStatus({
+      submitted: false,
+      loading: true,
+      error: null
+    })
 
     try {
-      const response = await axios.post('/api/contact', formData)
+      await axios.post(
+        `${API_URL}/api/contact`,
+        formData
+      )
+
       setStatus({
         submitted: true,
         loading: false,
         error: null
       })
+
       setFormData({
         name: '',
         email: '',
         subject: '',
         message: ''
       })
+
     } catch (error) {
       setStatus({
         submitted: false,
         loading: false,
-        error: error.response?.data?.message || 'Failed to send message. Please try again.'
+        error:
+          error.response?.data?.message ||
+          'Failed to send message. Please try again.'
       })
     }
   }
@@ -83,9 +99,9 @@ export default function Contact() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-      },
-    },
+        staggerChildren: 0.1
+      }
+    }
   }
 
   const itemVariants = {
@@ -93,8 +109,8 @@ export default function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5 },
-    },
+      transition: { duration: 0.5 }
+    }
   }
 
   return (
@@ -106,8 +122,13 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="page-title">Let's <span className="gradient-text">Connect</span></h1>
-            <p className="page-subtitle">Get in touch and let's create something amazing together</p>
+            <h1 className="page-title">
+              Let's <span className="gradient-text">Connect</span>
+            </h1>
+
+            <p className="page-subtitle">
+              Get in touch and let's create something amazing together
+            </p>
           </motion.div>
         </div>
       </section>
@@ -115,6 +136,7 @@ export default function Contact() {
       <section className="contact-content">
         <div className="container">
           <div className="contact-grid">
+
             <motion.div
               className="contact-info-section"
               variants={containerVariants}
@@ -123,6 +145,7 @@ export default function Contact() {
               viewport={{ once: true }}
             >
               <h2 className="section-title">Get In Touch</h2>
+
               <p className="section-description">
                 Have a question or want to work together? I'd love to hear from you!
               </p>
@@ -136,7 +159,10 @@ export default function Contact() {
                     variants={itemVariants}
                     whileHover={{ y: -5 }}
                   >
-                    <div className="contact-icon">{info.icon}</div>
+                    <div className="contact-icon">
+                      {info.icon}
+                    </div>
+
                     <h3>{info.title}</h3>
                     <p>{info.value}</p>
                   </motion.a>
@@ -145,7 +171,9 @@ export default function Contact() {
 
               <div className="social-section">
                 <h3>Follow Me</h3>
+
                 <div className="social-icons">
+
                   <motion.a
                     href="https://github.com/ambikamishra03"
                     target="_blank"
@@ -156,6 +184,7 @@ export default function Contact() {
                   >
                     🐙
                   </motion.a>
+
                   <motion.a
                     href="https://www.linkedin.com/in/ambikamishraa/"
                     target="_blank"
@@ -166,6 +195,7 @@ export default function Contact() {
                   >
                     💼
                   </motion.a>
+
                   <motion.a
                     href="https://leetcode.com/u/ambikamishra/"
                     target="_blank"
@@ -176,6 +206,7 @@ export default function Contact() {
                   >
                     💻
                   </motion.a>
+
                   <motion.a
                     href="https://www.geeksforgeeks.org/profile/ambikamishra9236"
                     target="_blank"
@@ -186,6 +217,7 @@ export default function Contact() {
                   >
                     📚
                   </motion.a>
+
                 </div>
               </div>
             </motion.div>
@@ -197,7 +229,9 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="section-title">Send Me a Message</h2>
+              <h2 className="section-title">
+                Send Me a Message
+              </h2>
 
               {status.submitted && (
                 <motion.div
@@ -205,7 +239,7 @@ export default function Contact() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
-                  ✓ Message sent successfully! I'll get back to you soon.
+                  ✓ Message sent successfully!
                 </motion.div>
               )}
 
@@ -219,56 +253,52 @@ export default function Contact() {
                 </motion.div>
               )}
 
-              <form onSubmit={handleSubmit} className="contact-form">
+              <form
+                onSubmit={handleSubmit}
+                className="contact-form"
+              >
+
                 <div className="form-group">
-                  <label htmlFor="name">Name</label>
+                  <label>Name</label>
                   <input
                     type="text"
-                    id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="Your name"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label>Email</label>
                   <input
                     type="email"
-                    id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="your@email.com"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
+                  <label>Subject</label>
                   <input
                     type="text"
-                    id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    placeholder="What is this about?"
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Message</label>
+                  <label>Message</label>
                   <textarea
-                    id="message"
                     name="message"
+                    rows="6"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Tell me more about your project..."
-                    rows="6"
                   />
                 </div>
 
@@ -279,8 +309,10 @@ export default function Contact() {
                 >
                   {status.loading ? 'Sending...' : 'Send Message'}
                 </button>
+
               </form>
             </motion.div>
+
           </div>
         </div>
       </section>

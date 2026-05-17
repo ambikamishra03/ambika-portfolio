@@ -24,9 +24,9 @@ export default function Home() {
   }
 
   const stats = [
-    { label: 'Projects', value: '5+' },
+    { label: 'Projects', value: '10+' },
     { label: 'Technologies', value: '15+' },
-    { label: 'Experience', value: 'CSE Student' },
+    { label: 'Experience', value: 'Software Developer' },
   ]
 
   return (
